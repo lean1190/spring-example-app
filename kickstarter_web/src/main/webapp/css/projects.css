@@ -1,0 +1,47 @@
+/* 
+    Document   : projects
+    Author     : CI-Lifia Grupo 4
+    Description:
+        Define todo los estilos relacionados con los proyectos
+*/
+
+
+.projects-list {
+    margin: 0 auto !important;
+    width: 95%;
+}
+
+.project-item {
+    padding: 10px;
+    display:inline-block;
+    margin-right: 20px;
+}
+
+.project-item:last-child {
+    margin-right: 0px;
+}
+
+div.project-wrapper {
+  width: 500px;
+  margin: 10px
+}
+ 
+ol.project-content {
+  color: #ccc;
+  list-style-type: none;
+}
+ 
+ol.project-content li p.project-section-content {
+  font: 15px/1.5 Helvetica, sans-serif;
+  color: #555;
+  font-weight: bold;
+}
+ 
+ol.project-content li div.project-section-name {
+  font: bold italic 30px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+.project-invested {
+    font-size: 25px;
+}
+

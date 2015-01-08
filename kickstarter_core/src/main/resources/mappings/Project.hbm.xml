@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping package="ar.edu.unlp.info.lifia.grupo1.model">
+	<class name="Project">
+	
+		<id name="id" column="id_project">
+			<generator class="native" />
+		</id>
+		
+		<discriminator column="type" type="string"/>
+		
+		<many-to-one name="creator" column="id_creator_role" unique="true" not-null="true" cascade="all"/>
+		
+		<many-to-one name="projectState" column="id_project_state" unique="true" not-null="true" cascade="all"/>
+	
+		<set name="investors" cascade="all-delete-orphan" >
+			<key column="id_project" />
+			<one-to-many class="InvestorRole"/> 		
+		</set>
+		
+		<set name="sections" cascade="all-delete-orphan" >
+			<key column="id_project" />
+			<one-to-many class="Section"/> 		
+		</set>
+		
+		<subclass name="MovieProject" discriminator-value="Movie" />
+		
+		<subclass name="GameProject" discriminator-value="Game" />
+								
+	</class>
+</hibernate-mapping>

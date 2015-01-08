@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="ar.edu.unlp.info.lifia.grupo1.model">
+	
+	<class name="User">
+	
+		<id name="id" column="id_user">
+			<generator class="native"/>
+		</id>
+		
+		<property name="administrator" not-null="true"/>
+		<property name="name" not-null="true"/>
+		<property name="username" not-null="true" unique="true"/> 
+		<property name="password" not-null="true"/>
+		<property name="money" not-null="true" />
+		<property name="successPoints" not-null="true" />
+		
+		<set name="userRoles" inverse="true" cascade="all-delete-orphan">
+			<key column="id_user"/>
+			<one-to-many class="UserRole"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

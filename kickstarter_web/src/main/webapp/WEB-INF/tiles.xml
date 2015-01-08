@@ -1,0 +1,89 @@
+<!--?xml version="1.0" encoding="UTF-8"? -->
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+    <!-- Base Layout Definition -->
+    <definition name="baseLayout" template="/WEB-INF/jsp/layout/layout.jsp">
+        <put-attribute name="title" value="KickStarter - Grupo 4" />
+        <put-attribute name="header" value="/WEB-INF/jsp/layout/header.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/WEB-INF/jsp/layout/footer.jsp" />
+    </definition>
+
+    <definition name="index" extends="baseLayout">
+        <put-attribute name="title" value="Bienvenido a KickStarter" />
+        <put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
+    </definition>
+
+    <!-- Login Views -->
+    <definition name="login" extends="baseLayout">
+        <put-attribute name="body" value="/WEB-INF/jsp/login.jsp" />
+    </definition>
+
+    <definition name="loginfailed" extends="baseLayout">
+        <put-attribute name="body" value="/WEB-INF/jsp/loginfailed.jsp" />
+    </definition>
+
+    <!-- Register Views -->
+    <definition name="registerUser" extends="baseLayout">
+        <put-attribute name="title" value="Registro de usuario" />
+        <put-attribute name="body" value="/WEB-INF/jsp/registerUser.jsp" />
+    </definition>
+
+    <!-- Projects Creation Views -->
+    <definition name="createProject" extends="baseLayout">
+        <put-attribute name="title" value="Crear juego" />
+        <put-attribute name="body" value="/WEB-INF/jsp/createProject.jsp" />
+    </definition>
+
+    <!-- Projects Operations Views -->
+    <definition name="showProject" extends="baseLayout">
+        <put-attribute name="title" value="Project" />
+        <put-attribute name="body" value="/WEB-INF/jsp/showProject.jsp" />
+    </definition>
+
+    <definition name="changeStateProject" extends="baseLayout">
+        <put-attribute name="title" value="Cambiar el estado de un proyecto" />
+        <put-attribute name="body" value="/WEB-INF/jsp/changeStateProject.jsp" />
+    </definition>
+
+    <definition name="investInProject" extends="baseLayout">
+        <put-attribute name="title" value="Invetir en un proyecto" />
+        <put-attribute name="body" value="/WEB-INF/jsp/investInProject.jsp" />
+    </definition>
+
+    <definition name="internalError" extends="baseLayout">
+        <put-attribute name="title" value="Error interno" />
+        <put-attribute name="body" value="/WEB-INF/jsp/internalError.jsp" />
+    </definition>
+
+    <definition name="rankingUsers" extends="baseLayout">
+        <put-attribute name="title" value="Ranking de Usuarios Creadores" />
+        <put-attribute name="body" value="/WEB-INF/jsp/rankingUsers.jsp" />
+    </definition>
+
+    <definition name="inversions" extends="baseLayout">
+        <put-attribute name="title" value="Ranking de inversiones" />
+        <put-attribute name="body" value="/WEB-INF/jsp/inversions.jsp" />
+    </definition>
+
+    <definition name="searchResults" extends="baseLayout">
+        <put-attribute name="title" value="Search" />
+        <put-attribute name="body" value="/WEB-INF/jsp/searchResults.jsp" />
+    </definition>
+
+    <!-- Others -->
+    <definition name="infoPage" extends="baseLayout">
+        <put-attribute name="title" value="Info" />
+        <put-attribute name="body" value="/WEB-INF/jsp/infoPage.jsp" />
+    </definition>
+
+    <definition name="maintenance" extends="baseLayout">
+        <put-attribute name="title" value="La Pagina esta en mantenimiento" />
+        <put-attribute name="body" value="/WEB-INF/jsp/maintenance.jsp" />
+    </definition>
+
+</tiles-definitions>

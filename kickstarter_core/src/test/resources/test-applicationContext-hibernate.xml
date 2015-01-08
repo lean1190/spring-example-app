@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.hsqldb.jdbcDriver" />
+		<property name="url" value="jdbc:hsqldb:mem:butterfly" />
+		<property name="username" value="sa" />
+		<property name="password" value="" />
+	</bean>
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		
+		<!-- mapping files -->
+		<property name="mappingResources">
+			<list>
+				<value>ar/edu/unlp/info/lifia/grupo1/mappings/User.hbm.xml</value>
+				<value>ar/edu/unlp/info/lifia/grupo1/mappings/ProjectState.hbm.xml</value>
+				<value>ar/edu/unlp/info/lifia/grupo1/mappings/Project.hbm.xml</value>
+				<value>ar/edu/unlp/info/lifia/grupo1/mappings/UserRole.hbm.xml</value>
+				<value>ar/edu/unlp/info/lifia/grupo1/mappings/Investment.hbm.xml</value>
+				<value>ar/edu/unlp/info/lifia/grupo1/mappings/Section.hbm.xml</value>			
+			</list>
+		</property>
+		
+		<!-- hibernate properties -->
+		<property name="hibernateProperties">
+			<props>
+				<!-- SQL dialect -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
+				
+				<!-- Drop and re-create the database schema on startup -->
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
+				
+				<!-- JDBC connection pool -->
+				<prop key="hibernate.connection.pool_size">1</prop>
+
+		        <!-- Enable Hibernate's automatic session context management -->
+		        <prop key="hibernate.current_session_context_class">thread</prop>
+		
+		        <!-- Echo all executed SQL to stdout -->
+		        <prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+	<!-- Hibernate Template -->
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate" autowire="byType" />
+	
+	<!-- DAO beans -->
+	<bean id="userDAO" class="ar.edu.unlp.info.lifia.grupo1.repository.HibernateUserDAO" autowire="byType" />
+	<bean id="projectDAO" class="ar.edu.unlp.info.lifia.grupo1.repository.HibernateProjectDAO" autowire="byType" />
+
+</beans>
