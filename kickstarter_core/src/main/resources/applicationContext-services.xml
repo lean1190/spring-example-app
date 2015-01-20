@@ -13,12 +13,12 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
 	<!-- User Service bean -->
-	<bean id="userService" class="ar.edu.unlp.info.lifia.grupo1.services.UserService" autowire="byType">
+	<bean id="userService" class="ar.edu.unlp.info.services.UserService" autowire="byType">
 		<property name="userDAO" ref="userDAO" />
 	</bean>
 
 	<!-- Project Service bean -->	
-	<bean id="projectService" class="ar.edu.unlp.info.lifia.grupo1.services.ProjectService" autowire="byType">
+	<bean id="projectService" class="ar.edu.unlp.info.services.ProjectService" autowire="byType">
 		<property name="projectDAO" ref="projectDAO" />
 		<property name="userDAO" ref="userDAO" />
 	</bean>

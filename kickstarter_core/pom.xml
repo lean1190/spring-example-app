@@ -6,12 +6,13 @@
     <packaging>jar</packaging>
 
     <parent>
-        <groupId>ar.edu.unlp.info.lifia.grupo4</groupId>
+        <groupId>ar.edu.unlp.info</groupId>
         <artifactId>kickstarter_like_app</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
     <dependencies>
+        
         <!-- MySQL database driver -->
         <dependency>
             <groupId>mysql</groupId>

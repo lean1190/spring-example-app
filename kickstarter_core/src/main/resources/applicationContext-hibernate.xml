@@ -9,7 +9,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost/kickstarter_like_app" />
-		<property name="username" value="grupo4" />
+		<property name="username" value="root" />
 		<property name="password" value="" />
 	</bean>
 
@@ -62,7 +62,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate" autowire="byType" />
 	
 	<!-- DAO beans -->
-	<bean id="userDAO" class="ar.edu.unlp.info.lifia.grupo1.repository.HibernateUserDAO" autowire="byType" />
-	<bean id="projectDAO" class="ar.edu.unlp.info.lifia.grupo1.repository.HibernateProjectDAO" autowire="byType" />
+	<bean id="userDAO" class="ar.edu.unlp.info.repository.HibernateUserDAO" autowire="byType" />
+	<bean id="projectDAO" class="ar.edu.unlp.info.repository.HibernateProjectDAO" autowire="byType" />
 
 </beans>

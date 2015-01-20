@@ -10,7 +10,7 @@
     <import resource="securityContext.xml"/>
     <mvc:annotation-driven />
 
-    <context:component-scan base-package="ar.edu.unlp.info.lifia.grupo4.controllers" />
+    <context:component-scan base-package="ar.edu.unlp.info.controllers" />
         
     <!-- MVC Resources -->
     <mvc:resources mapping="/css/**" location="/css/" />

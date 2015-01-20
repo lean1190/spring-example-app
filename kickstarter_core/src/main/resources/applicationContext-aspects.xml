@@ -10,6 +10,6 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
 	<aop:aspectj-autoproxy />
 	
 	<!-- Logging Aspect -->
-	<bean id="loggingAspect" class="ar.edu.unlp.info.lifia.grupo1.aspects.LoggingAspect" />
+	<bean id="loggingAspect" class="ar.edu.unlp.info.aspects.LoggingAspect" />
 
 </beans>

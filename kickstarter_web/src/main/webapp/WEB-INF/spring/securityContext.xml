@@ -26,10 +26,10 @@
     </http>
     
     <!-- Authorization denied handler -->
-    <beans:bean id="accessDeniedHandler" class="ar.edu.unlp.info.lifia.grupo4.controllers.AccessDeniedHandlerController"/>
+    <beans:bean id="accessDeniedHandler" class="ar.edu.unlp.info.controllers.AccessDeniedHandlerController"/>
     
     <!-- Authentication provider configuration -->
-    <beans:bean id="customUserDetailsService" class="ar.edu.unlp.info.lifia.grupo4.services.CustomUserDetailsService" autowire="byType" />
+    <beans:bean id="customUserDetailsService" class="ar.edu.unlp.info.services.CustomUserDetailsService" autowire="byType" />
 
     <authentication-manager>
         <authentication-provider user-service-ref="customUserDetailsService">

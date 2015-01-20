@@ -7,7 +7,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <packaging>war</packaging>
 
     <parent>
-        <groupId>ar.edu.unlp.info.lifia.grupo4</groupId>
+        <groupId>ar.edu.unlp.info</groupId>
         <artifactId>kickstarter_like_app</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
@@ -15,7 +15,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <dependencies>
 
         <dependency>
-            <groupId>ar.edu.unlp.info.lifia.grupo4</groupId>
+            <groupId>ar.edu.unlp.info</groupId>
             <artifactId>kickstarter_core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
